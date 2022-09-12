@@ -15,26 +15,29 @@ namespace OOP_LB2._2
             this.Surname = surname;
             this.Experience = experience;
             this.Job = job;
+        }
+        public void Salary_and_tax_calculator()
+        {
             double salary;
-            if(job == "software engineer")
+            if (this.Job == "software engineer")
             {
                 salary = 1200;
                 Console.WriteLine($"Name: {Name} {Surname}\n" +
-             $"Salary : {salary = salary + (200 * experience)}$\n" +
+             $"Salary : {salary = salary + (200 * this.Experience)}$\n" +
              $"ПДФО :{salary * 0.18} ВЗ: {salary * 0.015 } ПСП: {salary * 0.22}");
             }
-            else if(job == "designer")
+            else if (this.Job == "designer")
             {
                 salary = 900;
                 Console.WriteLine($"Name: {Name} {Surname}\n" +
-             $"Salary : {salary = salary +(100 * experience)}$\n" +
+             $"Salary : {salary = salary + (100 * this.Experience)}$\n" +
              $"ПДФО :{salary * 0.18} ВЗ: {salary * 0.015 } ПСП: {salary * 0.22}");
             }
-            else if(job == "3d artist")
+            else if (this.Job == "3d artist")
             {
                 salary = 850;
                 Console.WriteLine($"Name: {Name} {Surname}\n" +
-             $"Salary : {salary = salary + (150 * experience)}$\n" +
+             $"Salary : {salary = salary + (150 * this.Experience)}$\n" +
              $"ПДФО :{salary * 0.18}$ ВЗ: {salary * 0.015 }$ ПСП: {salary * 0.22}$");
             }
             else
@@ -55,7 +58,9 @@ namespace OOP_LB2._2
             string job = Console.ReadLine();
             Console.Write("Experience (in years) : ");
             int experience = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("-----------------------------");
             Employee employee = new Employee(name, surname,job,experience);
+            employee.Salary_and_tax_calculator();
             Console.ReadKey();
         }
     }
